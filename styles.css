@@ -1,5 +1,14 @@
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+
 body, html {
-    background: hsl(218, 23%, 16%);
+    background: var(--dark-blue);
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -11,7 +20,7 @@ body, html {
 }
 
 #advice-container {
-    background: hsl(217, 19%, 24%);
+    background: var(--dark-grayish-blue);
     padding: 2rem;
     border-radius: 1rem;
     height: fit-content;
@@ -24,7 +33,7 @@ body, html {
 }
 
 #advice-text {
-    color: hsl(193, 38%, 86%);
+    color: var(--light-cyan);
     font-size: 28px;
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
@@ -32,7 +41,7 @@ body, html {
 
 #advice-button {
     all: unset;
-    background: hsl(150, 100%, 66%);
+    background: var(--neon-green);
     padding: 20px;
     border-radius: 50px;
     display: flex;
@@ -55,7 +64,7 @@ svg {
     text-transform: uppercase;
     justify-content: start;
     align-items: start;
-    color: hsl(150, 100%, 66%);
+    color: var(--neon-green);
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -74,4 +83,42 @@ svg {
 
 #advice-divider svg {
     display: block;
+}
+
+#advice-divider-mobile svg {
+    display: none;
+}
+
+#divider-desktop {
+    display: block;
+}
+
+#divider-mobile {
+    display: none;
+}
+
+/*Medienabfrage für Mobilgeräte*/
+@media (max-width: 375px) {
+    #divider-desktop {
+        display: none;
+    }
+
+    #divider-mobile{
+        display: block;
+    }
+
+
+    #advice-container {
+        width: 90%;
+        padding: 1.5 rem;
+    }
+
+    #advice-text {
+        font-size: 20px;
+    }
+
+    #advice-button {
+        bottom: -45px;
+        padding: 15px;
+    }
 }
